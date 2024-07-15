@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load socialaccount %}
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
@@ -48,12 +49,12 @@
 </head>
 <body>
 <h1>Register Page</h1>
+
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-
-    <button type="submit">Submit</button>
+    <a href="{% provider_login_url 'google' %}">GOOGLE</a>
 </form>
-
+<button type="submit">Submit</button>
 </body>
 </html>
